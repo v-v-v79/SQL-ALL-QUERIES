@@ -40,6 +40,27 @@ select * from EMPLOYEES
 where EMPLOYEE_ID<120
 order by SALARY desc;
 
+-- display all information from employees and order them based firstname asc
+select * from EMPLOYEES
+order by FIRST_NAME  ;
 
 
+--IQ -->  display all information from employees and order them based firstname asc and based on lastname desc
+select * from  EMPLOYEES
+order by FIRST_NAME,LAST_NAME DESC;
+
+/*
+ it will first order result based on firstname
+ after getting result if we have same names it will order them based lastname in desc order
+
+ David Austin
+ David Berstein
+ David Lee
+
+ --After execution
+ David Lee
+ David Berstein
+ David Austin
+
+ */
 
