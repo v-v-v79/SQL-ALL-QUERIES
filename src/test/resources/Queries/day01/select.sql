@@ -46,12 +46,3 @@ select job_id,job_title from jobs;
 
 
 
-
-
-
-
-
-
-
-
-
