@@ -23,3 +23,10 @@ group by first_name
 having count(*)>1
 order by 2 desc;
 
+
+
+select first_name,count(*) as firstname_count from EMPLOYEES
+group by first_name
+having count(*)>1
+order by 2 desc;
+
