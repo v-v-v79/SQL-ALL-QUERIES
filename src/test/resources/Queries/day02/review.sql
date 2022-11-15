@@ -27,6 +27,13 @@ select * from EMPLOYEES
 where FIRST_NAME not like 'D____'
 order by FIRST_NAME;
 
+-- count
+
+select count(*) from EMPLOYEES
+where FIRST_NAME not like 'D____'
+order by FIRST_NAME;
+
+
 
 
 
