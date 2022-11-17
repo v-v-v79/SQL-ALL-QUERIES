@@ -66,3 +66,34 @@ SET salary=salary+10000
 WHERE age>40;
 
 commit;
+
+/*
+DELETE FROM table_name
+WHERE condition;
+*/
+
+DELETE from scrumteam
+where empid=1;
+
+select * from scrumteam;
+
+DELETE from scrumteam
+where jobtitle='Developer' and age>40;
+
+commit;
+
+-- ALTER
+
+-- ADD NEW COLUMN
+ALTER TABLE scrumteam add gender varchar(10);
+
+select * from scrumteam;
+-- update empID=2 gender as Male
+update scrumteam
+set gender='Male'
+where empid=2;
+-- check (gender in ('MALE', 'FEMALE'))
+
+-- RENAME THE COLUMN
+ALTER TABLE scrumteam rename column salary to annual_salary;
+
