@@ -35,7 +35,7 @@ select email from EMPLOYEES;
 select initcap(email) from EMPLOYEES;
 
 
--- LENGTH()
+-- LENGTH(varchar)
 select email,length(email||'@gmail.com') as email_length  from EMPLOYEES
 order by email_length;
 
@@ -44,6 +44,34 @@ order by email_length;
     where length(FIRST_NAME)=6;
 
     -- give me another solution
+    select FIRST_NAME from EMPLOYEES
+    where FIRST_NAME like '______';
+
+    -- howm nay we have
+    select count(*) from EMPLOYEES
+    where FIRST_NAME like '______';
+
+
+--SUBSTR(columnName,beginningIndex,numberOfChar)
+/*
+
+    - if beginning index 0 , it is treated as 1
+    - if the beginning index negative , it will start from backward
+    - if we dont specify number of char it will work till the end
+
+
+ */
+    --display initial from firstname and lastname -->      S.K. ---  N.K.
+        select * from EMPLOYEES;
+
+        select substr(FIRST_NAME,0,1)||'.'||substr(LAST_NAME,0,1)||'.' as initials from employees;
+
+        select substr(FIRST_NAME,1,1)||'.'||substr(LAST_NAME,1,1)||'.' as initials from employees;
+
+        select FIRST_NAME,substr(FIRST_NAME,-3,2) from EMPLOYEES;
+
+        select FIRST_NAME,substr(FIRST_NAME,-3) from EMPLOYEES;
+
 
 
 
