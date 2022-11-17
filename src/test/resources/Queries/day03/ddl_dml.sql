@@ -105,3 +105,20 @@ select * from scrumteam;
 ALTER TABLE scrumteam rename to agileteam;
 select * from agileteam;
 commit;
+
+-- TRUNCATE
+truncate table agileteam;
+select * from agileteam;
+
+-- DROP
+drop table agileteam;
+commit;
+
+/*
+
+ IO ---> What is difference between TRUNCATE and DROP
+
+    TRUNC --> it will delete table content
+    DROP  --> it will delete all table including contents too
+
+ */
