@@ -51,3 +51,19 @@ select * from employees;
         select * from EMPLOYEES
         where salary=(select max(salary) from EMPLOYEES
                       where salary < (select max(salary) from EMPLOYEES));
+
+
+
+-- display all information who is getting more than average ?
+     -- find avg salary
+        select avg(salary) from employees;
+
+     -- display who is getting over avg
+        select  * from EMPLOYEES
+        where salary > 6462;
+
+     -- SOLUTION --> make it dynamic
+        select  * from EMPLOYEES
+        where salary > (select avg(salary) from employees)
+
+-- HOMEWORK --> display all information who is getting second minimum salary ?
