@@ -97,3 +97,11 @@ where empid=2;
 -- RENAME THE COLUMN
 ALTER TABLE scrumteam rename column salary to annual_salary;
 
+-- DROP COLUMN
+ALTER TABLE scrumteam drop column gender;
+select * from scrumteam;
+
+-- RENAME TO ---> CHANGE TABLE NAME
+ALTER TABLE scrumteam rename to agileteam;
+select * from agileteam;
+commit;
