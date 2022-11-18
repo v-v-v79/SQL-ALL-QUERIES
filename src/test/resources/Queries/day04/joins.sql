@@ -64,6 +64,5 @@ select FIRST_NAME,LAST_NAME,ADDRESS,PHONE
     on a.ADDRESS_ID = c.ADDRESS_ID;
 
 
-<
 
 
