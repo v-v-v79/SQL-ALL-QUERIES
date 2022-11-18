@@ -24,7 +24,7 @@ select * from employees;
         select max(salary) from (select distinct SALARY from EMPLOYEES order by salary asc)
         where rownum<4;
 
-        -- get me information who is getting 3rd highest salary
+        -- get me information who is getting 3rd lowest salary
         select * from EMPLOYEES
         where SALARY=(select max(salary) from (select distinct SALARY from EMPLOYEES order by salary asc)
                       where rownum<4);
