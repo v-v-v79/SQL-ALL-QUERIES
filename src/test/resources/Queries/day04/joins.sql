@@ -65,4 +65,14 @@ select FIRST_NAME,LAST_NAME,ADDRESS,PHONE
 
 
 
+/*
+ FULL OUTER JOIN
+
+ -- It will all matching + unique for LEFT + unique for  RIGHT
+ -- The order of tables does not matter
+
+ */
+select FIRST_NAME,LAST_NAME,ADDRESS,PHONE
+from address a full join CUSTOMER c
+                          on a.ADDRESS_ID = c.ADDRESS_ID;
 
