@@ -2,7 +2,7 @@ select * from employees;
 
 /*
 
- INNER JOIN
+ INNER JOIN / JOIN
 
  - it gives only matching portion of tables
  - the order tables does not matter
@@ -66,7 +66,7 @@ select FIRST_NAME,LAST_NAME,ADDRESS,PHONE
 
 
 /*
- FULL OUTER JOIN
+ FULL OUTER JOIN / FULL JOIN
 
  -- It will all matching + unique for LEFT + unique for  RIGHT
  -- The order of tables does not matter
