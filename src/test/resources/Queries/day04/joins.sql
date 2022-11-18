@@ -91,6 +91,7 @@ NOTE --> if there is a customer with c.address_id 6 , there is no matching data 
 
 
  */
+
 SELECT customer_id, first_name, last_name, address, phone FROM customer
     LEFT OUTER JOIN address
       ON customer.address_id = address.address_id
