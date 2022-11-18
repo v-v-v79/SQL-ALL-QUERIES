@@ -62,17 +62,50 @@ select * from departments;
 --6.Display All cities and related country names  including with countries without city
     select * from COUNTRIES;
     select distinct COUNTRY_ID from LOCATIONS;
-    -- LEFT JOIN
+    -- RIGHT JOIN
     select CITY,COUNTRY_NAME from LOCATIONS L right join COUNTRIES C
         on L.COUNTRY_ID = C.COUNTRY_ID;
 
 
 
-    -- RIGHT JOIN
+    -- LEFT JOIN
     select city,COUNTRY_NAME from COUNTRIES C left join LOCATIONS L
         on C.COUNTRY_ID = L.COUNTRY_ID;
 
+    -- FULL JOIN
+    select city,COUNTRY_NAME from COUNTRIES C full join LOCATIONS L
+                                                    on C.COUNTRY_ID = L.COUNTRY_ID;
 
---7.Display all department name and  street adresss
+--7.Display all department name and  related street adresss
+    select DEPARTMENT_NAME,STREET_ADDRESS,L.LOCATION_ID from LOCATIONS L inner join DEPARTMENTS D
+            on L.LOCATION_ID = D.LOCATION_ID;
+
+
+
 --8.Display first_name,last_name and department_name,city for all employees
+    select first_name,last_name,department_name,city from EMPLOYEES E
+        inner join  DEPARTMENTS D
+            on E.DEPARTMENT_ID = D.DEPARTMENT_ID
+        inner join LOCATIONS L
+            on D.LOCATION_ID = L.LOCATION_ID;
+
+    -- where is the Kimberly ?
+select first_name,last_name,department_name,city from EMPLOYEES E
+      left join  DEPARTMENTS D
+          on E.DEPARTMENT_ID = D.DEPARTMENT_ID
+      left join LOCATIONS L
+          on D.LOCATION_ID = L.LOCATION_ID;
+
+    -- How many employees departments we have  in each city ?
+     select city,count(*) from EMPLOYEES E
+             left join  DEPARTMENTS D
+                 on E.DEPARTMENT_ID = D.DEPARTMENT_ID
+             left join LOCATIONS L
+                on D.LOCATION_ID = L.LOCATION_ID
+     group by city
+     order by 2 ;
+
+
+
 --9.Display first_name,last_name and department_name,city,country_name for all employees
+
