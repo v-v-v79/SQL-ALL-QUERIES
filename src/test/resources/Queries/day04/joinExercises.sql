@@ -54,16 +54,25 @@ select * from departments;
                on d.DEPARTMENT_ID = e.DEPARTMENT_ID;
 
 
-
 --5.Display All cities and related country names
-
-
-
-
-
+    select city, country_name from LOCATIONS L inner join COUNTRIES C
+            on L.COUNTRY_ID = C.COUNTRY_ID;
 
 
 --6.Display All cities and related country names  including with countries without city
+    select * from COUNTRIES;
+    select distinct COUNTRY_ID from LOCATIONS;
+    -- LEFT JOIN
+    select CITY,COUNTRY_NAME from LOCATIONS L right join COUNTRIES C
+        on L.COUNTRY_ID = C.COUNTRY_ID;
+
+
+
+    -- RIGHT JOIN
+    select city,COUNTRY_NAME from COUNTRIES C left join LOCATIONS L
+        on C.COUNTRY_ID = L.COUNTRY_ID;
+
+
 --7.Display all department name and  street adresss
 --8.Display first_name,last_name and department_name,city for all employees
 --9.Display first_name,last_name and department_name,city,country_name for all employees
