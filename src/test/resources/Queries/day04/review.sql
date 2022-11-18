@@ -28,3 +28,5 @@ select * from employees;
         select * from EMPLOYEES
         where SALARY=(select max(salary) from (select distinct SALARY from EMPLOYEES order by salary asc)
                       where rownum<4);
+
+        select * from DEPARTMENTS;
