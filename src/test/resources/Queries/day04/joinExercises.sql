@@ -105,7 +105,25 @@ select first_name,last_name,department_name,city from EMPLOYEES E
      group by city
      order by 2 ;
 
-
-
 --9.Display first_name,last_name and department_name,city,country_name for all employees
 
+select first_name,last_name,department_name,city,COUNTRY_NAME from EMPLOYEES E
+        inner join  DEPARTMENTS D
+               on E.DEPARTMENT_ID = D.DEPARTMENT_ID
+        inner join LOCATIONS L
+               on D.LOCATION_ID = L.LOCATION_ID
+        inner join COUNTRIES C
+            on L.COUNTRY_ID = C.COUNTRY_ID;
+
+
+    -- How many employees departments we have  in country name ?
+select COUNTRY_NAME,count(*) from EMPLOYEES E
+        inner join  DEPARTMENTS D
+             on E.DEPARTMENT_ID = D.DEPARTMENT_ID
+        inner join LOCATIONS L
+             on D.LOCATION_ID = L.LOCATION_ID
+        inner join COUNTRIES C
+             on L.COUNTRY_ID = C.COUNTRY_ID
+group by COUNTRY_NAME
+having count(*)>20
+order by 2;
