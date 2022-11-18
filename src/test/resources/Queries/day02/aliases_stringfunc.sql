@@ -5,7 +5,12 @@ select  * from employees;
  1.Column aliases --> it is temporary name to show in display
 
 
- 2.Table aliases ---> before JOINS
+ 2.Table aliases --->
+
+    -- Table Aliases
+        -- Customer  --> C
+        -- Employees --> E
+        -- Address   --> A
 
 
  NOTE --> We are just displaying and nothing will change in DB
