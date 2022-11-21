@@ -20,7 +20,7 @@ public class P03_MetaDataTest {
         Statement statement = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
 
         // ResultSet will store data after execution.It stores only data (there is no table info )
-        ResultSet rs = statement.executeQuery("select * from EMPLOYEES");
+        ResultSet rs = statement.executeQuery("select * from departments");
 
 
         //  DatabaseMetaData  --> It is information about database itself
@@ -44,10 +44,50 @@ public class P03_MetaDataTest {
 
 
         // get me column name from index 3
-        System.out.println(rsmd.getColumnName(3));
+        System.out.println(rsmd.getColumnName(2));
         // it will return provided columnIndex name
 
         // Print all column names dynamicly
+        System.out.println("---- COLUMNS NAMES ---- ");
+        for (int i = 1; i <= columnCount; i++) {
+            System.out.println(rsmd.getColumnName(i));
+        }
+
+        /*
+        HOW TO GET DATA DYNAMICLY FOR QUERIES ?
+
+
+            ResultSet         --> it holds table data
+
+                   rs.next() --> to iterate each row dynamicly
+
+                   rs.getString(index)     --> to get data from specified column
+                   rs.getString(ColumnName)
+
+            ResultSetMetaData --> it holds table infor (columnNames - ColumnCount)
+
+
+                   rsmd.getColumnCount() ---> will give how many column we have
+                   rsmd.getColumnName()  ---> it will give spesified columnName
+         */
+
+
+        // PRINT TABLE CONTENT DYNAMICLY
+
+
+        System.out.println("----- PRINT ALL DATA DYNAMIC ----- ");
+        // EMPLOYEE_ID - 1
+        // FIRST_NAME  - Steven
+        // iterate each row
+        while(rs.next()){
+
+            // iterate each column
+            for (int i = 1; i <= rsmd.getColumnCount(); i++) {
+                System.out.print(rsmd.getColumnName(i)+"-"+rs.getString(i)+" ");
+            }
+            System.out.println();
+        }
+
 
 
 
