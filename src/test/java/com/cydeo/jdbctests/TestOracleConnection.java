@@ -41,7 +41,7 @@ public class TestOracleConnection {
             // GETTING DATA
             // next() ---> Moves the cursor forward one row from its current position.
 
-            System.out.println("------ FIRST ROW -------");
+           /* System.out.println("------ FIRST ROW -------");
             rs.next();
 
             // pointer shows the first row
@@ -72,10 +72,30 @@ public class TestOracleConnection {
             System.out.println(rs.getString("REGION_ID")+" - "+rs.getString("REGION_NAME"));
 
 
+            System.out.println("------ THIRD ROW -------");
+
+            // 3 THIRD ROW    3 - Asia
+            rs.next();
+
+            System.out.println(rs.getString(1)+" - "+rs.getString(2));
+            System.out.println(rs.getString("REGION_ID")+" - "+rs.getString("REGION_NAME"));
+
+            System.out.println("------ 4TH ROW -------");
+
+            // 4 TH ROW    4 - Middle East and Africa
+            rs.next();
+            System.out.println(rs.getString(1)+" - "+rs.getString(2));
+            System.out.println(rs.getString("REGION_ID")+" - "+rs.getString("REGION_NAME"));
 
 
+            // WHAT if we have 1000 line ?*/
 
 
+            while(rs.next()){
+                System.out.println("-----------------");
+                System.out.println(rs.getString(1)+" - "+rs.getString(2));
+
+            }
 
 
             // close connections
