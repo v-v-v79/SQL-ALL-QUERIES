@@ -20,7 +20,7 @@ public class P03_MetaDataTest {
         Statement statement = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
 
         // ResultSet will store data after execution.It stores only data (there is no table info )
-        ResultSet rs = statement.executeQuery("select * from departments");
+        ResultSet rs = statement.executeQuery("select first_name,last_name,salary from employees");
 
 
         //  DatabaseMetaData  --> It is information about database itself
