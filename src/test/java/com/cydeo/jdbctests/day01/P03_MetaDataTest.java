@@ -47,6 +47,9 @@ public class P03_MetaDataTest {
         System.out.println(rsmd.getColumnName(3));
         // it will return provided columnIndex name
 
+        // Print all column names dynamicly
+
+
 
         // close connections
         rs.close();
