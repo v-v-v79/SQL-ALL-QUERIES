@@ -41,6 +41,7 @@ public class TestOracleConnection {
             // GETTING DATA
             // next() ---> Moves the cursor forward one row from its current position.
 
+            System.out.println("------ FIRST ROW -------");
             rs.next();
 
             // pointer shows the first row
@@ -58,9 +59,17 @@ public class TestOracleConnection {
                     System.out.println(rs.getInt("REGION_ID"));
                     System.out.println(rs.getString("REGION_ID"));
 
+            // get me Europe
+            System.out.println(rs.getString(2)); // Europe
+            System.out.println(rs.getString("REGION_NAME")); // Europe
 
+            System.out.println("------ SECOND ROW -------");
 
+            rs.next();
+            // 2 SECOND ROW    2 - Americas
 
+            System.out.println(rs.getString(1)+" - "+rs.getString(2));
+            System.out.println(rs.getString("REGION_ID")+" - "+rs.getString("REGION_NAME"));
 
 
 
