@@ -61,4 +61,22 @@ public class P02_Library_DBTest {
 
 
     }
+
+
+
+    // HOMEWORK
+
+    /*
+    Do same task for user count
+        - Get data from datasbase to see how many user we have
+        - Get data from UI to see how many user we have
+        - Assertions
+     */
+
+    /*
+    Do same task for borrowed book
+        - Get data from datasbase to see how many bookborrowed
+        - Get data from UI to see how many bookborrowed
+        - Assertions
+    */
 }
