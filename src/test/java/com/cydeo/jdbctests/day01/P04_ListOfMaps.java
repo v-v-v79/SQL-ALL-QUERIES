@@ -123,4 +123,57 @@ public class P04_ListOfMaps {
     }
 
 
+    @Test
+    public void task3() throws SQLException {
+
+        // DriverManager Class getConnection method will help to connect database
+        Connection conn = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
+
+        // It helps us to execute queries
+        Statement statement = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+
+        // ResultSet will store data after execution.It stores only data (there is no table info )
+        ResultSet rs = statement.executeQuery("select first_name,last_name,salary from employees");
+
+        ResultSetMetaData rsmd = rs.getMetaData();
+
+
+        List<Map<String,Object>> dataList=new ArrayList<>();
+
+        // iterate each row dynamiccly
+        while(rs.next()){
+
+            Map<String,Object> rowMap=new HashMap<>();
+
+            // iterate each column dynamiccly to fill rowMap
+            for (int i = 1; i <= rsmd.getColumnCount(); i++) {
+
+                rowMap.put(rsmd.getColumnName(i),rs.getString(i));
+                // i=1 rowMap.put("first_name","Ellen")
+                // i=2 rowMap.put("last_name","Abel")
+                // i=3 rowMap.put("salary","24000")
+
+            }
+
+            dataList.add(rowMap);
+
+        }
+
+        System.out.println("---- ALL DATA --- ");
+        for (Map<String, Object> eachRowMap : dataList) {
+            System.out.println(eachRowMap);
+        }
+
+
+
+
+
+        // close connections
+        rs.close();
+        statement.close();
+        conn.close();
+
+    }
+
+
 }
