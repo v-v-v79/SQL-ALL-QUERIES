@@ -1,4 +1,4 @@
-select * from books;
+select count(*) from books;
 
 
 -- if you cant connect
