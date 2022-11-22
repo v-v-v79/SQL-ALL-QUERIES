@@ -151,7 +151,7 @@ public class P04_ListOfMaps {
                 rowMap.put(rsmd.getColumnName(i),rs.getString(i));
                 // i=1 rowMap.put("first_name","Ellen")
                 // i=2 rowMap.put("last_name","Abel")
-                // i=3 rowMap.put("salary","24000")
+                // i=3 rowMap.put("salary","11000")
 
             }
 
