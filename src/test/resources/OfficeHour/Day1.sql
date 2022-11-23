@@ -71,6 +71,13 @@ FROM (SELECT FIRST_NAME,LAST_NAME,SALARY
       ORDER BY SALARY DESC)
 WHERE ROWNUM < 11;
 
+--Task 10: get me all employees information order by first name asc
+SELECT *
+FROM EMPLOYEES
+    ORDER BY FIRST_NAME ASC ;
+select * from employees
+order by first_name, last_name desc;
+
 --Task 11: get me unique first name row numbers in a table : HOW MANY OF THEM
 -- GET ME DUPLICATE NAMES : PIQ
 SELECT COUNT(DISTINCT FIRST_NAME)
@@ -81,19 +88,37 @@ FROM EMPLOYEES
 GROUP BY FIRST_NAME
 HAVING COUNT(*)>1;
 
+-- FIRST GET ME EACH COUNTRY ID THEN FIND DUPLICATE COUNTRY IDs
+SELECT * FROM LOCATIONS;
+SELECT DISTINCT COUNTRY_ID
+FROM LOCATIONS;
 
+SELECT COUNTRY_ID, COUNT(*)
+FROM LOCATIONS
+GROUP BY COUNTRY_ID
+HAVING COUNT(*)>1;
 
+--Task 12: get me average salary of employees
 
+SELECT ROUND(AVG(SALARY),2)
+FROM EMPLOYEES;
 
+--Task 13: get me min salary of employees: WHO MAKES THIS SALARY
+SELECT MIN(SALARY)
+FROM EMPLOYEES;
 
+SELECT FIRST_NAME,LAST_NAME
+FROM EMPLOYEES
+WHERE SALARY = (SELECT MIN(SALARY)
+                FROM EMPLOYEES);
 
+--Task 14: get me max salary of employees
+SELECT MAX(SALARY)
+FROM EMPLOYEES;
 
-
-
-
-
-
-
-
+--Task 16: add @gmail.com and name new column to full_email
+-- we have column aliases 'as' keyword , when we use joins in tables we table aliases
+SELECT LOWER(FIRST_NAME) || '@gmail.com' as FULL_EMAIL
+from EMPLOYEES;
 
 

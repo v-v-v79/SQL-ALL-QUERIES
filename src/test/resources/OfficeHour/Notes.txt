@@ -1,0 +1,33 @@
+Name : Oscar
+
+JAVA -- Front-End Automation
+Eben you are a UI tester you will need back end data:
+why? -- Database information will feed your UI automation
+
+A tester we do: compare expected and actual values
+Expected comes from requirements and also Database
+
+SQL: Structered Query Language
+
+DMS : Database Management System
+  OUR HR DB : Oracle
+  - PostGreSQL
+  - MongoDB
+  - MySQL
+  Most of DMSs are working with SQL
+
+**** We have tables: they are related to each other through Primary Keys and Foreign Keys
+Relational Databases  : SQL
+
+QUERIES:
+
+WHERE (conditions)----- This one is used to filter your search results : =, !=, >, <, >=, and, or
+
+PIQ: WHAT IS THE DIFFERENCE BETWEEN WHERE AND HAVING?
+CLASS CHAT: having we can use with group by and where we can use with the whole table
+
+PIQ: WHAT ARE WILD CARDS IN SQL?
+LIKE STATEMENT
+STARTS WITH chars%
+ENDS WITH %chars
+each char with _ : _ _ c _ _
