@@ -14,7 +14,7 @@ select * from employees;
  */
 
  -- display all employees where first_name startswith B
-select * from EMPLOYEES
+select FIRST_NAME from EMPLOYEES
 where first_name like 'B%';
 
 -- WRONG LOGIC
@@ -54,3 +54,7 @@ where JOB_ID like '%IT%';
 -- display all information where firstname startswith H and ending with l
 select * from EMPLOYEES
 where FIRST_NAME like 'H%l';
+
+SELECT FIRST_NAME FROM employees
+WHERE length(FIRST_NAME) = 5;
+

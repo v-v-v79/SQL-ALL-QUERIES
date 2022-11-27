@@ -60,13 +60,16 @@ where SALARY>6000;
 -- MAX--
 select FIRST_NAME,salary from EMPLOYEES;
 select max(salary) from EMPLOYEES;
+select * from EMPLOYEES
+    where SALARY = (SELECT max(SALARY) FROM EMPLOYEES);
 
 
 -- MIN--
 select min(salary) from EMPLOYEES;
 
 -- AVG--
-select avg(salary) from EMPLOYEES;
+select avg(salary) from EMPLOYEES
+    group by EMPLOYEE_ID;
 
 select round(avg(salary)) from EMPLOYEES;
 select round(avg(salary),1) from EMPLOYEES;

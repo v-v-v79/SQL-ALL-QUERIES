@@ -47,7 +47,7 @@ order by FIRST_NAME  ;
 
 --IQ -->  display all information from employees and order them based firstname asc and based on lastname desc
 select * from  EMPLOYEES
-order by FIRST_NAME,LAST_NAME DESC;
+order by FIRST_NAME ASC,LAST_NAME DESC;
 
 /*
  it will first order result based on firstname

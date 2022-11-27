@@ -43,6 +43,10 @@ select country_name,region_id from countries;
 -- display job_id and job title from jobs table
 select job_id,job_title from jobs;
 
+-----------------------------------------
+
+select * from employees;
+
 
 
 

@@ -15,7 +15,7 @@ select * from employees;
     -- order list based firstname
         select FIRST_NAME, DEPARTMENT_NAME
         from EMPLOYEES E inner join DEPARTMENTS D
-                                    on E.DEPARTMENT_ID = D.DEPARTMENT_ID
+        on E.DEPARTMENT_ID = D.DEPARTMENT_ID
         order by FIRST_NAME ;
 
 --2.Display all first_name and department_name including the  department without employee
